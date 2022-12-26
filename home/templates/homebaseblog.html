@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>{% block title %} DJANGO Fotograf Paylasma Sitesi{% endblock %}</title>
+      <meta name="keywords" content="{% block keywords %} Anasayfa anahtar kelimeler {% endblock %}">
+      <meta name="description" content="{% block decription %} Anasayfa kısa açıklama {% endblock %}">
+      <meta name="author" content="{% block author %} Anasayfa author {% endblock %}">
+      <!-- site icons -->
+      {% load static %}
+      <link rel="icon" href="{% static 'img/fevicon.png' %}" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+      <!-- site css -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+      <!-- colors css -->
+      <link rel="stylesheet" href="{% static 'css/colors.css' %}" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+      <!-- wow animation css -->
+      <link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+      <!-- Revolution Loaling Fonts and Icons  -->
+      <link rel="stylesheet" href="{% static 'js/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css' %}">
+      <!-- Revolution style Sheets  -->
+      <link rel="stylesheet" href="{% static 'js/revolution/css/settings.css' %}">
+      <link rel="stylesheet" href="{% static 'js/revolution/css/layers.css' %}">
+      <link rel="stylesheet" href="{% static 'js/revolution/css/navigation.css' %}">
+      <!-- owl stylesheets -->
+      <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+      <link rel="stylesheet" href="{% static 'css/owl.theme.default.css' %}">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+      {% block head %}  {% endblock %}
+</head>
+{% load static %}
+<header class="header">
+         <div class="header_top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="full">
+                         <!--<span class="toggle_icon" style="cursor:pointer" onclick="openNav()"><img src="{% static 'img/menu_icon.png' %}" alt="#" /></span>-->
+                        <div class="logo_circle">
+                            <a href="/"><img class="img-responsive" src="{% static 'img/Millenium_Logo_2020.png' %}"width="150" height="80" alt="#" /></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-8">
+                     <div class="float-right">
+                        <ul class="top_links">
+                           <li><a href="#"><img src="{% static 'images/profile_icon.png' %}" alt="#" /></a></li>
+                           <li class="searchbar">
+                              <input class="search_input" type="text" name="" placeholder="Search...">
+                              <a href="#" class="search_icon"><img src="{% static 'images/search_icon.png' %}" alt="#" /></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+    <!-- section -->
+<br><br>
+      <section class="layout_padding">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="full heading_s1 text_align_center">
+                     <h3>Sizden Gelenler</h3>
+                  </div>
+               <div class="testimonial_slider">
+                     <div class="full">
+                        <div class="client_slider_main2">
+                           <div id="testimonial2" class="client_slider_main owl-carousel owl-theme">
+                              <div class="item">
+                                 <div class="row">
+                                    <div class="col-md-3">
+                                       <div class="full">
+                                          <div class="center"> <img src="{% static 'images/layout_img/testimo_profile.png' %}" alt="#" /> </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                       <div class="full">
+                                          <div class="testi_head">
+                                             <h4>Lianna john</h4>
+                                             <p>Home Rentel</p>
+                                          </div>
+                                       </div>
+                                       <div class="full testi_slide">
+                                          <p><img src="{% static 'images/layout_img/quate_left_test.png' %}" alt="#" />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item">
+                                 <div class="row">
+                                    <div class="col-md-3">
+                                       <div class="full">
+                                          <div class="center"> <img src="{% static 'images/layout_img/testimo_profile.png' %}" alt="#" /> </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                       <div class="full">
+                                          <div class="testi_head">
+                                             <h4>Rosy Mike</h4>
+                                             <p>Home Rentel</p>
+                                          </div>
+                                       </div>
+                                       <div class="full testi_slide">
+                                          <p><img src="{% static 'images/layout_img/quate_left_test.png' %}" alt="#" />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="item">
+                                 <div class="row">
+                                    <div class="col-md-3">
+                                       <div class="full">
+                                          <div class="center"> <img src="{% static 'images/layout_img/testimo_profile.png' %}" alt="#" /> </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-md-9">
+                                       <div class="full">
+                                          <div class="testi_head">
+                                             <h4>William Butter</h4>
+                                             <p>Home Rentel</p>
+                                          </div>
+                                       </div>
+                                       <div class="full testi_slide">
+                                          <p><img src="{% static 'images/layout_img/quate_left_test.png' %}" alt="#" />Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua..</p>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- end section -->
+    {% include 'footer.html' %}
+    {% block foot %}  {% endblock %}
+<body></body>
+</html>

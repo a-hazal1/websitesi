@@ -1,0 +1,46 @@
+<!-- Start Banner Slider -->
+{% load static %}
+      <div class="banner-slider">
+         <div class="container-fluid">
+            <div class="row">
+               <div id="slider_main" class="carousel slide" data-ride="carousel">
+                  <!-- The slideshow -->
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="full">
+                           <div class="left_blog_top">
+                              <h3>Fotoğraf paylaşma<br>Sitesi</h3>
+                              <p>Sitemize hoş geldiniz eğlenceli dakikalar dileriz.</p>
+                           </div>
+                           <div class="right_blog_top">
+                              <img src="{% static 'img/kayanresim.jpg' %}"width="400" height="500" alt="#" />
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="full">
+                           <div class="left_blog_top">
+                              <h3>Fotoğraf puanlama<br>Sitesi</h3>
+                              <p>Sitemize hoş geldiniz eğlenceli dakikalar dileriz.</p>
+                           </div>
+                           <div class="right_blog_top">
+                              <img src="{% static 'img/kayan2.PNG' %}" width="400" height="500" alt="#" />
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="slide_arrow">
+                     <span>
+                     <a class="carousel-control-prev" href="#slider_main" data-slide="prev">
+                     <span class="carousel-control-prev-icon"></span>
+                     </a>
+                     <a class="carousel-control-next" href="#slider_main" data-slide="next">
+                     <span class="carousel-control-next-icon"></span>
+                     </a>
+                     </span>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- End Banner Slider -->

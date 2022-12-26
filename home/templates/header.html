@@ -1,0 +1,40 @@
+<!-- header -->
+{% load static %}
+      <div id="mySidenav" class="sidenav">
+         <ul class="menu_sidebar">
+            <li><a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a></li>
+            <li><a href="/">01. Anasayfa</a></li>
+            <li><a href="/hakkimizda">02. Hakkımızda</a></li>
+            <li><a href="/fotograflarimiz">03. Fotağraf Galerisi</a></li>
+            <li><a href="/blog">04. Sizden gelenler</a></li>
+            <li><a href="/iletisim">05. İletişim</a></li>
+         </ul>
+      </div>
+      <header class="header">
+         <div class="header_top">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-4">
+                     <div class="full">
+                        <span class="toggle_icon" style="cursor:pointer" onclick="openNav()"><img src="{% static 'img/menu_icon.png' %}" alt="#" /></span>
+                        <div class="logo_circle">
+                           <a href="index.html"><img class="img-responsive" src="{% static 'img/Millenium_Logo_2020.png' %}"width="150" height="80" alt="#" /></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-md-8">
+                     <div class="float-right">
+                        <ul class="top_links">
+                           <li><a href="#"><img src="{% static 'images/profile_icon.png' %}" alt="#" /></a></li>
+                           <li class="searchbar">
+                              <input class="search_input" type="text" name="" placeholder="Search...">
+                              <a href="#" class="search_icon"><img src="{% static 'images/search_icon.png' %}" alt="#" /></a>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </header>
+<!-- end header -->
