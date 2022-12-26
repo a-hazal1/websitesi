@@ -61,3 +61,4 @@ class ContactFormu(ModelForm):
             'email' : TextInput(attrs={'class':'full field' , 'placeholder':'Email'}),
             'message' : TextInput(attrs={'class':'full field' , 'placeholder':'Message'}),
         }
+

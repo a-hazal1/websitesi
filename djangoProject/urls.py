@@ -29,6 +29,7 @@ urlpatterns = [
     path('polls/', include('polls.urls')),
     path('home/', include('home.urls')),
     path('admin/', admin.site.urls),
+    path('login/', views.login, name='login'),
     path('ckeditor/',include('ckeditor_uploader.urls')),
 
 ]
