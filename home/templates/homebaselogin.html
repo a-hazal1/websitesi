@@ -48,46 +48,68 @@
                <div class="row">
                   <div class="col-md-4">
                      <div class="full">
-                        <!--<span class="toggle_icon" style="cursor:pointer" onclick="openNav()"><img src="{% static 'img/menu_icon.png' %}" alt="#" /></span>-->
+                         <!--<span class="toggle_icon" style="cursor:pointer" onclick="openNav()"><img src="{% static 'img/menu_icon.png' %}" alt="#" /></span>-->
                         <div class="logo_circle">
                            <a href="/"><img class="img-responsive" src="{% static 'img/Millenium_Logo_2020.png' %}"width="150" height="80" alt="#" /></a>
                         </div>
-                     </div>
-                  </div>
-                  <div class="col-md-8">
-                     <div class="float-right">
-                        <ul class="top_links">
-                           <li><a href="#"><img src="{% static 'images/profile_icon.png' %}" alt="#" /></a></li>
-                           <li class="searchbar">
-                              <input class="search_input" type="text" name="" placeholder="Search...">
-                              <a href="#" class="search_icon"><img src="{% static 'images/search_icon.png' %}" alt="#" /></a>
-                           </li>
-                        </ul>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </header>
-    <br><br><br><br><br><br>
-<form class="form_main">
-                         <fieldset>
-                            <div class="row">
-                              <div class="col-md-10 offset-md-1">
-                                 <div class="full field">
-                                     <input type="email" name="email" placeholder="E-mail" required="" />
-                                 </div>
-                                  <div class="full field">
-                                     <input type="password" name="password" placeholder="Şifre" required="" />
-                                 </div>
-                                 <div class="full field center">
-                                    <button>Log In</button>
-                                 </div>
-                              </div>
+<br><br>
+{% block body %}
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-fluid py-5">
+                        <div class="container py-5">
+                            <div class="text-center mb-3 pb-3">
+                                <h3 class="text-primary text-uppercase" style="color: black">Login</h3>
                             </div>
-                         </fieldset>
-                      </form>
-
+                            {%  if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }} text-center" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <form action =""method="post">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                                <input type="submit" value="SEND FORM">
+                            </form>
+                            <div class="text-center">
+                                <form class="form_main">
+                                    <fieldset>
+                                    <div class="row">
+                                        <div class="col-md-10 offset-md-1">
+                                            <div class="full field">
+                                                <input type="email" name="email" placeholder="E-mail" required="" />
+                                            </div>
+                                            <div class="full field">
+                                                <input type="password" name="password" placeholder="Şifre" required="" />
+                                            </div>
+                                            <div class="full field center">
+                                                <button>Log In</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="">
+                    {{ settings.contact|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
     {% include 'footer.html' %}
     {% block foot %}  {% endblock %}
 <body></body>

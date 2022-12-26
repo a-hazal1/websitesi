@@ -1,0 +1,59 @@
+{% extends "homebase.html" %}
+
+{% block title %}İletisim--{{ setting.company }}{% endblock %}
+{% block keywords %}{{ setting.keywords }}{% endblock %}
+{% block description %}{{ setting.description }}{% endblock %}
+
+{% block head %}
+    <link rel="shortcut icon" type="image/x-icon" href="{{ setting.icon.url }}"/>
+{% endblock %}
+
+{% block sidebar %}
+    {% include "header.html" %}
+{% endblock %}
+
+{% block body %}
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="container-fluid py-5">
+                        <div class="container py-5">
+                            <div class="mb-3 pb-3">
+                                <h6 class="text-primary text-uppercase" style="">Sign Up</h6>
+                            </div>
+                            {%  if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }} text-center" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <div>
+                                <form method="post">
+                                    {% crsf_token %}
+                                    {% for field in form %}
+                                        <p>
+                                            {{ field.label_tag }}<br>
+                                            {{ field }}
+                                            {% for error in field.errors %}
+                                                <p style="">{{ error }}</p>
+                                            {% endfor %}
+                                        </p>
+                                    {% endfor %}
+                                    <button type="submit">Sign Up</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" style="">
+                    {{ settings.contact|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+

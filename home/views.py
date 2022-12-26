@@ -1,7 +1,9 @@
 from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
+from home.forms import SignUpForm
 from home.models import Setting, ContactFormMessage
 from home.models import Setting, ContactFormu
 
@@ -40,7 +42,28 @@ def blog(request):
     setting = Setting.objects.get(pk=1)
     context={'setting':setting}
     return render(request, 'blog.html', context)
-def login(request):
-    setting = Setting.objects.get(pk=1)
-    context={'setting':setting}
-    return render(request, 'login.html', context)
+def login_view(request):
+    if request.method == 'POST':  # check post
+            email = request.POST['email']
+            password = request.POST['password']
+            user=authenticate(request, email=email,password=password)
+            if user is not None:
+                return HttpResponseRedirect('/')
+            else:
+                messages.warning(request,"Hatalı kullanıcı adı veya parola girişi!")
+                return HttpResponseRedirect('/login')
+    return render(request,'login.html')
+
+def signup_view(request):
+    if request.method == 'POST':  # check post
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            form.save()
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('message')
+            user=authenticate(email=email,password=password)
+            login(request,user)
+            return HttpResponseRedirect('/')
+    form = SignUpForm(pk=1)
+    context = {'form': form}
+    return render(request, 'signup.html', context)
