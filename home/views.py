@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
@@ -42,6 +42,14 @@ def blog(request):
     setting = Setting.objects.get(pk=1)
     context={'setting':setting}
     return render(request, 'blog.html', context)
+def uyegiris(request):
+    setting = Setting.objects.get(pk=1)
+    context={'setting':setting}
+    return render(request, 'uyegiris.html', context)
+def logout_view(request):
+    logout(request)
+    return HttpResponseRedirect('/login')
+
 def login_view(request):
     if request.method == 'POST':  # check post
             email = request.POST['email']
@@ -60,10 +68,10 @@ def signup_view(request):
         if form.is_valid():
             form.save()
             email = form.cleaned_data.get('email')
-            password = form.cleaned_data.get('message')
+            password = form.cleaned_data.get('password')
             user=authenticate(email=email,password=password)
             login(request,user)
             return HttpResponseRedirect('/')
-    form = SignUpForm(pk=1)
+    form = SignUpForm()
     context = {'form': form}
     return render(request, 'signup.html', context)

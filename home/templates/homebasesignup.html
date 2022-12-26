@@ -59,6 +59,7 @@
          </div>
       </header>
 <br><br>
+
 {% block body %}
     <div class="section">
         <div class="container">
@@ -66,8 +67,8 @@
                 <div class="col-md-12">
                     <div class="container-fluid py-5">
                         <div class="container py-5">
-                            <div class="text-center mb-3 pb-3">
-                                <h3 class="text-primary text-uppercase" style="color: black">Login</h3>
+                            <div class="mb-3 pb-3">
+                                <h6 class="text-primary text-uppercase" style="">Sign Up</h6>
                             </div>
                             {%  if messages %}
                                 {% for message in messages %}
@@ -76,37 +77,24 @@
                                     </div>
                                 {% endfor %}
                             {% endif %}
-                            <form action =""method="post">
-                                {% csrf_token %}
-                                {{ form.as_p }}
-                                <input type="button" value="Log In">
-                            </form>
-                            <div class="text-center">
-                                <form class="form_main">
-                                    <fieldset>
-                                    <div class="row">
-                                        <div class="col-md-10 offset-md-1">
-                                            <div class="full field">
-                                                <input type="email" name="email" placeholder="E-mail" required="" />
-                                            </div>
-                                            <div class="full field">
-                                                <input type="password" name="password" placeholder="Şifre" required="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </form>
+                            <div>
+                                <form method="post">
+                                    {% crsf_token %}
+                                    {% for field in form %}
+                                        <p>
+                                            {{ field.label_tag }}<br>
+                                            {{ field }}
+                                            {% for error in field.errors %}
+                                                <p style="color: red">{{ error }}</p>
+                                            {% endfor %}
+                                        </p>
+                                    {% endfor %}
+                                    <button type="submit">Sign Up</button>
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
-                {% if user.id is not None %}
-                <span style="color: black"><i class="fa fa-user" style="color: black" ></i> {{ user.name }}</span>
-                <a href="/logout/" style="color: black">Log Out</a>
-                {% else %}
-                    <a href="/login/" style="color: black"><i class="fa fa-unlock-alt"style="color: whitesmoke"></i>Log In</a>
-                    <a href="/signup/"><i class="fa fa-user-plus"style="color: black"></i>Create an account</a>
-                {% endif %}
                 <div class="col-md-6" style="">
                     {{ settings.contact|safe }}
                 </div>
