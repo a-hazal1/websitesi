@@ -1354,7 +1354,7 @@ section .social_icons {
 
 .banner-slider {
     height: auto;
-    background-image: url('../img/arkaplaan.jpeg');
+    background-image: url(../img/arkaplaan.jpeg);
     width: 100%;
     background-size: cover;
     background-position: top center;

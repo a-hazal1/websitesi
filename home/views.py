@@ -43,7 +43,7 @@ def blog(request):
     return render(request, 'blog.html', context)
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect('/login')
+    return HttpResponseRedirect('/')
 
 def login_view(request):
     if request.method == 'POST':  # check post
@@ -62,9 +62,9 @@ def signup_view(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            email = form.cleaned_data.get('email')
-            password = form.cleaned_data.get('password')
-            user=authenticate(email=email,password=password)
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password1')
+            user=authenticate(username=username, password=password)
             login(request,user)
             return HttpResponseRedirect('/')
     form = SignUpForm()
