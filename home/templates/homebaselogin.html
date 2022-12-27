@@ -78,35 +78,43 @@
                             {% endif %}
                             <form action =""method="post">
                                 {% csrf_token %}
-                                {{ form.as_p }}
-                                <input type="button" value="Log In">
+                                <div class="form-group">
+                                    Username: <input class="input" type="text" name="username" placeholder="User Name">
+                                </div>
+                                <div class="form-group">
+                                    Password: <input class="input" type="password" name="password" placeholder="Password">
+                                </div>
+                                <input class="btn btn-primary" type="submit" value="Log In">
                             </form>
-                            <div class="text-center">
+                           <!-- <div class="text-center">
                                 <form class="form_main">
                                     <fieldset>
                                     <div class="row">
                                         <div class="col-md-10 offset-md-1">
                                             <div class="full field">
-                                                <input type="email" name="email" placeholder="E-mail" required="" />
+                                                <input type="text" name="username" placeholder="Kullanıcı adı" required="" />
                                             </div>
                                             <div class="full field">
                                                 <input type="password" name="password" placeholder="Şifre" required="" />
                                             </div>
+                                            <button>Log In</button>
                                         </div>
+
                                     </div>
                                 </fieldset>
                             </form>
-                            </div>
+                            </div> -->
+                        </div>
                         </div>
                     </div>
                 </div>
-                {% if user.id is not None %}
+                <!--{% if user.id is not None %}
                 <span style="color: black"><i class="fa fa-user" style="color: black" ></i> {{ user.name }}</span>
                 <a href="/logout/" style="color: black">Log Out</a>
                 {% else %}
                     <a href="/login/" style="color: black"><i class="fa fa-unlock-alt"style="color: whitesmoke"></i>Log In</a>
                     <a href="/signup/"><i class="fa fa-user-plus"style="color: black"></i>Create an account</a>
-                {% endif %}
+                {% endif %} -->
                 <div class="col-md-6" style="">
                     {{ settings.contact|safe }}
                 </div>

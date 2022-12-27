@@ -80,11 +80,27 @@
                      <h3>Geri Dönüş Sağlayın</h3>
                      <p>Sitemizde neleri iyileştirebiliriz?</p>
                   </div>
-                    {% if message %}
+                    <!--{% if message %}
                             {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }}" role="alert">
-                             {{ message }}
-                            </div>
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                 {{ message }}
+                                </div>
+                            {% endfor %}
+                    {% endif %}
+                    <form action =""method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <input type="submit" value="SEND FORM">
+                    </form>-->
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                   {% if message %}
+                            {% for message in messages %}
+                                <div class="alert alert-{{ message.tags }}" role="alert">
+                                 {{ message }}
+                                </div>
                             {% endfor %}
                     {% endif %}
                     <form action =""method="post">
@@ -92,11 +108,7 @@
                         {{ form.as_p }}
                         <input type="submit" value="SEND FORM">
                     </form>
-               </div>
-            </div>
-            <div class="row">
-               <div class="col-md-6">
-                  <form action="#">
+                  <!--<form action="#">
 
                      <fieldset>
                         <div class="row">
@@ -116,12 +128,13 @@
 
                               <div class="full fieldset_blog center">
                               </div>
+                               <button>Send</button>
                            </div>
                         </div>
                      </fieldset>
 
 
-                  </form>
+                  </form>-->
                </div>
                <div class="col-md-6 p-relative">
                   <div class="full back_blog">
